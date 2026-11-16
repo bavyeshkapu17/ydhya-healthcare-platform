@@ -1,0 +1,350 @@
+
+.admin-profile-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #183b2b;
+}
+
+.admin-profile-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-profile-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #168653;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.admin-profile-heading h1 {
+  margin: 12px 0 6px;
+  font-size: 30px;
+}
+
+.admin-profile-heading p,
+.admin-profile-section-title p {
+  margin: 0;
+  color: #718477;
+}
+
+.admin-profile-heading-icon,
+.admin-profile-section-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #eaf7ef;
+  color: #168653;
+}
+
+.admin-profile-card {
+  padding: 26px;
+  margin-bottom: 22px;
+  border: 1px solid #e4eee7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(26, 83, 49, 0.045);
+}
+
+.admin-profile-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #edf2ee;
+}
+
+.admin-profile-avatar {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: #dff4e7;
+  color: #13824d;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.admin-profile-card-heading h2,
+.admin-profile-section-title h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+
+.admin-profile-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #168653;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-profile-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.admin-profile-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #365b45;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-profile-input {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid #dfeae2;
+  border-radius: 11px;
+  color: #789080;
+}
+
+.admin-profile-input:focus-within {
+  border-color: #269c62;
+  box-shadow: 0 0 0 3px rgba(38, 156, 98, 0.09);
+}
+
+.admin-profile-input input,
+.admin-profile-password {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #183b2b;
+  font: inherit;
+  font-size: 14px;
+}
+
+.admin-profile-input.readonly {
+  background: #f6f9f7;
+}
+
+.admin-profile-input input:read-only {
+  color: #718477;
+}
+
+.admin-profile-password {
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid #dfeae2;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.admin-profile-password:focus {
+  border-color: #269c62;
+  box-shadow: 0 0 0 3px rgba(38, 156, 98, 0.09);
+}
+
+.admin-profile-primary {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 19px;
+  border: 0;
+  border-radius: 10px;
+  background: #168653;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-profile-primary:hover {
+  background: #106c41;
+}
+
+.admin-profile-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-profile-section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-profile-section-title p {
+  font-size: 13px;
+}
+
+.admin-profile-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf2ee;
+  font-size: 13px;
+}
+
+.admin-profile-info-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-profile-info-row span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #718477;
+}
+
+.admin-profile-info-row strong {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.admin-profile-active {
+  color: #168653;
+  text-transform: capitalize;
+}
+
+.admin-profile-no-activity {
+  padding: 25px 0 5px;
+  color: #718477;
+  font-size: 13px;
+}
+
+.admin-profile-activity-list {
+  margin-top: 20px;
+}
+
+.admin-profile-activity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf2ee;
+}
+
+.admin-profile-activity:last-child {
+  border-bottom: 0;
+}
+
+.admin-profile-activity-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eaf7ef;
+  color: #168653;
+}
+
+.admin-profile-activity div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-profile-activity strong {
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.admin-profile-activity span {
+  color: #718477;
+  font-size: 12px;
+}
+
+.admin-profile-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  margin-bottom: 18px;
+  border-radius: 11px;
+  font-size: 13px;
+}
+
+.admin-profile-message.error {
+  background: #fff0ef;
+  color: #b83232;
+}
+
+.admin-profile-message.success {
+  background: #eaf8ef;
+  color: #168653;
+}
+
+.admin-profile-loading {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #168653;
+}
+
+.admin-profile-loading p {
+  color: #718477;
+}
+
+.admin-profile-spinner {
+  animation: admin-profile-spin 1s linear infinite;
+}
+
+.admin-profile-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 25px;
+  border: 1px solid #dfeae2;
+  border-radius: 10px;
+  background: #fff;
+  color: #168653;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes admin-profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-profile-heading h1 {
+    font-size: 25px;
+  }
+
+  .admin-profile-card {
+    padding: 19px;
+  }
+
+  .admin-profile-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-profile-info-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-profile-info-row strong {
+    text-align: left;
+  }
+}

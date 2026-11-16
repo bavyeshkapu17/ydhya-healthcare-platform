@@ -1,0 +1,816 @@
+
+/* ======================================
+   BAVYESH'S YDHYA
+   PATIENT DOCTORS DASHBOARD
+====================================== */
+
+.ydhya-directory {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 28px;
+  color: #173d2b;
+  background: #f7faf8;
+}
+
+/* Hero */
+
+.ydhya-dashboard-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 290px;
+  overflow: hidden;
+  padding: 38px 44px;
+  border-radius: 25px;
+  background: linear-gradient(115deg, #e5f5eb, #f4fbf6);
+  border: 1px solid #dceee2;
+}
+
+.ydhya-dashboard-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.ydhya-eyebrow,
+.ydhya-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #23834d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.ydhya-dashboard-hero h1 {
+  margin: 20px 0 12px;
+  color: #174b30;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.ydhya-dashboard-hero h1 span {
+  color: #26935a;
+}
+
+.ydhya-dashboard-hero p {
+  max-width: 520px;
+  color: #71847a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ydhya-explore-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 15px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 11px;
+  background: #16834c;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ydhya-explore-button:hover {
+  background: #116c3d;
+}
+
+.ydhya-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 230px;
+  flex-shrink: 0;
+}
+
+.ydhya-hero-visual-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  height: 175px;
+  border: 1px solid #c6e8d1;
+  border-radius: 50%;
+  background: rgba(255,255,255,.75);
+  color: #23945a;
+  box-shadow: 0 15px 45px rgba(28, 110, 64, .08);
+}
+
+.ydhya-hero-floating-card {
+  position: absolute;
+  right: -8px;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid #e0eee4;
+  border-radius: 13px;
+  background: white;
+  color: #21864f;
+  box-shadow: 0 8px 25px rgba(20, 70, 40, .08);
+}
+
+.ydhya-hero-floating-card strong,
+.ydhya-hero-floating-card small {
+  display: block;
+}
+
+.ydhya-hero-floating-card strong {
+  color: #28523a;
+  font-size: 11px;
+}
+
+.ydhya-hero-floating-card small {
+  margin-top: 4px;
+  color: #839188;
+  font-size: 10px;
+}
+
+/* Statistics */
+
+.ydhya-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 23px 0 34px;
+}
+
+.ydhya-dashboard-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 19px;
+  border: 1px solid #e7eee9;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(25, 70, 42, .025);
+}
+
+.ydhya-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 13px;
+}
+
+.ydhya-stat-icon.green {
+  background: #e8f6ed;
+  color: #20894f;
+}
+
+.ydhya-stat-icon.blue {
+  background: #eaf2ff;
+  color: #4277c8;
+}
+
+.ydhya-stat-icon.purple {
+  background: #f1ecff;
+  color: #8062c8;
+}
+
+.ydhya-stat-icon.orange {
+  background: #fff1e5;
+  color: #d68b40;
+}
+
+.ydhya-dashboard-stat strong {
+  display: block;
+  color: #194b30;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.ydhya-dashboard-stat span {
+  display: block;
+  margin-top: 3px;
+  color: #849188;
+  font-size: 11px;
+}
+
+/* Section headings */
+
+.ydhya-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+.ydhya-section-heading h2,
+.ydhya-results-heading h2 {
+  margin: 7px 0 5px;
+  color: #19452e;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+.ydhya-section-heading p,
+.ydhya-results-heading p {
+  margin: 0;
+  color: #87948c;
+  font-size: 13px;
+}
+
+/* Departments */
+
+.ydhya-department-section {
+  margin-bottom: 36px;
+}
+
+.ydhya-department-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.ydhya-department-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #e5eee7;
+  border-radius: 15px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+
+.ydhya-department-card:hover {
+  border-color: #a9d8b8;
+  transform: translateY(-2px);
+}
+
+.ydhya-department-card.selected {
+  border-color: #26945a;
+  background: #eff8f2;
+}
+
+.ydhya-department-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #eaf6ee;
+  color: #258b51;
+}
+
+.ydhya-department-card strong {
+  color: #28543a;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.ydhya-department-card span {
+  color: #87948c;
+  font-size: 11px;
+}
+
+/* Search panel */
+
+.ydhya-directory-search-panel {
+  padding: 24px;
+  margin-bottom: 35px;
+  border: 1px solid #e5eee7;
+  border-radius: 19px;
+  background: white;
+}
+
+.ydhya-search-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 0 17px;
+  border: 1px solid #dfeae2;
+  border-radius: 12px;
+  color: #29935b;
+  background: #fbfdfb;
+}
+
+.ydhya-search-input:focus-within {
+  border-color: #29935b;
+  box-shadow: 0 0 0 3px rgba(41,147,91,.08);
+}
+
+.ydhya-search-input input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #254c35;
+  font-size: 13px;
+}
+
+.ydhya-search-input input::placeholder {
+  color: #a0aaa3;
+}
+
+.ydhya-search-input button {
+  display: flex;
+  border: 0;
+  background: transparent;
+  color: #85958b;
+  cursor: pointer;
+}
+
+.ydhya-filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 15px;
+}
+
+.ydhya-filter-control {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 190px;
+  padding: 0 12px;
+  border: 1px solid #e4ece6;
+  border-radius: 10px;
+  color: #318756;
+  background: #fff;
+}
+
+.ydhya-filter-control select {
+  width: 100%;
+  height: 42px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #526c5b;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ydhya-reset-filters {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #f3f7f4;
+  color: #63806d;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Results */
+
+.ydhya-directory-results {
+  margin-bottom: 30px;
+}
+
+.ydhya-results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ydhya-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #dce9df;
+  border-radius: 10px;
+  background: white;
+  color: #287d49;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ydhya-refresh-button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.ydhya-refresh-spin,
+.ydhya-loader {
+  animation: ydhya-spin 1s linear infinite;
+}
+
+@keyframes ydhya-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Doctor cards */
+
+.ydhya-doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.ydhya-doctor-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 21px;
+  border: 1px solid #e5eee7;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(25, 70, 42, .035);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.ydhya-doctor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(25, 70, 42, .08);
+}
+
+.ydhya-doctor-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ydhya-doctor-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 17px;
+  background: #eaf5ed;
+  color: #258b51;
+}
+
+.ydhya-doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ydhya-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border-radius: 20px;
+  background: #eaf7ee;
+  color: #20834b;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.ydhya-doctor-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.ydhya-doctor-specialty {
+  display: inline-block;
+  margin-top: 17px;
+  color: #24884e;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.ydhya-doctor-main h3 {
+  margin: 7px 0 5px;
+  color: #214b32;
+  font-size: 17px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.ydhya-doctor-qualification {
+  margin: 0;
+  color: #8a978f;
+  font-size: 12px;
+}
+
+.ydhya-doctor-divider {
+  height: 1px;
+  margin: 17px 0;
+  background: #edf2ee;
+}
+
+.ydhya-doctor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ydhya-doctor-info > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #7b8980;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ydhya-doctor-info svg {
+  flex-shrink: 0;
+  color: #29915a;
+}
+
+.ydhya-doctor-bio {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 14px 0 0;
+  color: #849087;
+  font-size: 12px;
+  line-height: 1.65;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Card footer */
+
+.ydhya-doctor-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 17px;
+  margin-top: 18px;
+  border-top: 1px solid #edf2ee;
+}
+
+.ydhya-doctor-fee span {
+  display: block;
+  margin-bottom: 5px;
+  color: #89968e;
+  font-size: 10px;
+}
+
+.ydhya-doctor-fee strong {
+  color: #197346;
+  font-size: 21px;
+  font-weight: 850;
+}
+
+.ydhya-doctor-modes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.ydhya-doctor-modes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: #eff7f1;
+  color: #398254;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+/* Empty, loading and error states */
+
+.ydhya-directory-state,
+.ydhya-directory-empty {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid #e5eee7;
+  border-radius: 18px;
+  background: white;
+  text-align: center;
+}
+
+.ydhya-loader {
+  color: #279357;
+}
+
+.ydhya-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  background: #eaf6ee;
+  color: #269157;
+}
+
+.ydhya-directory-empty h3,
+.ydhya-directory-state h3 {
+  margin: 15px 0 7px;
+  color: #28533a;
+  font-size: 17px;
+}
+
+.ydhya-directory-empty p,
+.ydhya-directory-state p {
+  max-width: 400px;
+  margin: 0;
+  color: #89958d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ydhya-directory-empty button,
+.ydhya-directory-error button {
+  margin-top: 14px;
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 9px;
+  background: #eaf6ee;
+  color: #217b48;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ydhya-directory-error {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  margin-bottom: 17px;
+  border: 1px solid #f0d6d2;
+  border-radius: 12px;
+  background: #fff7f6;
+  color: #a64c43;
+  font-size: 12px;
+}
+
+.ydhya-directory-error span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.ydhya-directory-error button {
+  margin: 0;
+  background: #fbe8e5;
+  color: #a64c43;
+}
+
+/* Footer information */
+
+.ydhya-directory-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 19px;
+  border: 1px solid #dceee2;
+  border-radius: 14px;
+  background: #eff8f2;
+  color: #27834c;
+}
+
+.ydhya-directory-note svg {
+  flex-shrink: 0;
+}
+
+.ydhya-directory-note strong {
+  display: block;
+  color: #28583b;
+  font-size: 12px;
+}
+
+.ydhya-directory-note p {
+  margin: 5px 0 0;
+  color: #71877a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .ydhya-dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ydhya-doctor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ydhya-department-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .ydhya-directory {
+    padding: 16px 12px;
+  }
+
+  .ydhya-dashboard-hero {
+    min-height: auto;
+    padding: 27px 21px;
+  }
+
+  .ydhya-hero-visual {
+    display: none;
+  }
+
+  .ydhya-dashboard-hero h1 {
+    font-size: 34px;
+  }
+
+  .ydhya-dashboard-stats {
+    gap: 10px;
+    margin: 16px 0 27px;
+  }
+
+  .ydhya-dashboard-stat {
+    gap: 9px;
+    padding: 13px 10px;
+  }
+
+  .ydhya-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ydhya-dashboard-stat strong {
+    font-size: 19px;
+  }
+
+  .ydhya-dashboard-stat span {
+    font-size: 10px;
+  }
+
+  .ydhya-department-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .ydhya-department-card {
+    padding: 13px;
+  }
+
+  .ydhya-directory-search-panel {
+    padding: 17px;
+  }
+
+  .ydhya-filter-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ydhya-filter-control {
+    width: 100%;
+  }
+
+  .ydhya-results-heading {
+    align-items: flex-start;
+  }
+
+  .ydhya-doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ydhya-doctor-card {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ydhya-doctor-card,
+  .ydhya-department-card {
+    transition: none;
+  }
+
+  .ydhya-refresh-spin,
+  .ydhya-loader {
+    animation: none;
+  }
+}

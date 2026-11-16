@@ -1,0 +1,1359 @@
+
+:root {
+  --yd-primary: #087f5b;
+  --yd-primary-dark: #056348;
+  --yd-primary-light: #e7f6ef;
+  --yd-accent: #14b87a;
+  --yd-background: #f4f8f5;
+  --yd-surface: #ffffff;
+  --yd-text: #18352b;
+  --yd-muted: #71847b;
+  --yd-border: #e1ebe5;
+  --yd-danger: #dc4c4c;
+  --yd-warning: #d99424;
+  --yd-shadow: 0 10px 35px rgba(24, 53, 43, 0.07);
+}
+
+/* =====================================
+   PAGE BASE
+===================================== */
+
+.yd-doctor-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px;
+  color: var(--yd-text);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(20, 184, 122, 0.07),
+      transparent 28%
+    ),
+    var(--yd-background);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.yd-doctor-page * {
+  box-sizing: border-box;
+}
+
+.yd-doctor-page button,
+.yd-doctor-page input,
+.yd-doctor-page textarea {
+  font: inherit;
+}
+
+.yd-doctor-page button {
+  cursor: pointer;
+}
+
+/* =====================================
+   LOADING
+===================================== */
+
+.yd-doctor-loading {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--yd-primary);
+}
+
+.yd-doctor-loading p {
+  color: var(--yd-muted);
+  font-size: 14px;
+}
+
+.yd-spin {
+  animation: yd-spin 1s linear infinite;
+}
+
+@keyframes yd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================
+   PAGE HEADING
+===================================== */
+
+.yd-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.yd-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--yd-primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.yd-page-heading h1 {
+  margin: 0;
+  color: var(--yd-text);
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.yd-page-heading p {
+  margin: 8px 0 0;
+  color: var(--yd-muted);
+  font-size: 14px;
+}
+
+.yd-account-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 17px;
+  color: var(--yd-primary-dark);
+  background: var(--yd-primary-light);
+  border: 1px solid #ccebdc;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+/* =====================================
+   PROFILE STATUS
+===================================== */
+
+.yd-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 22px;
+  margin-bottom: 24px;
+  background: #fff9ec;
+  border: 1px solid #f3e3bb;
+  border-radius: 17px;
+}
+
+.yd-status-banner.approved {
+  background: #ecfaf2;
+  border-color: #ccebd8;
+}
+
+.yd-status-symbol {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--yd-warning);
+  background: #fff0cf;
+  border-radius: 14px;
+}
+
+.yd-status-banner.approved .yd-status-symbol {
+  color: var(--yd-primary);
+  background: #d9f3e4;
+}
+
+.yd-status-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.yd-status-copy strong {
+  display: block;
+  color: var(--yd-text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.yd-status-copy p {
+  margin: 5px 0 0;
+  color: var(--yd-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.yd-status-label {
+  padding: 7px 12px;
+  color: #95620c;
+  background: #fff0cc;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.yd-status-banner.approved .yd-status-label {
+  color: var(--yd-primary-dark);
+  background: #d8f3e4;
+}
+
+/* =====================================
+   ALERT MESSAGES
+===================================== */
+
+.yd-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 15px;
+  margin: 14px 0;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.yd-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.yd-message-error {
+  color: #a62c2c;
+  background: #fff0f0;
+  border: 1px solid #f3d0d0;
+}
+
+.yd-message-success {
+  color: #08724f;
+  background: #eaf8f0;
+  border: 1px solid #ccebd9;
+}
+
+/* =====================================
+   COMMON SECTION HEADINGS
+===================================== */
+
+.yd-appointments-section,
+.yd-availability-section {
+  padding: 24px;
+  margin-bottom: 24px;
+  background: var(--yd-surface);
+  border: 1px solid var(--yd-border);
+  border-radius: 20px;
+  box-shadow: var(--yd-shadow);
+}
+
+.yd-appointments-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 21px;
+}
+
+.yd-appointments-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--yd-text);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.yd-appointments-heading h2 svg {
+  color: var(--yd-primary);
+}
+
+.yd-appointments-heading p {
+  margin: 7px 0 0;
+  color: var(--yd-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =====================================
+   REFRESH BUTTON
+===================================== */
+
+.yd-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 39px;
+  padding: 9px 14px;
+  color: var(--yd-primary-dark);
+  background: #f0faf5;
+  border: 1px solid #d2ecdf;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 750;
+  transition: 0.2s ease;
+}
+
+.yd-refresh-button:hover:not(:disabled) {
+  background: #dff5e9;
+  border-color: #a9dec2;
+}
+
+.yd-refresh-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   APPOINTMENT COUNTS
+===================================== */
+
+.yd-appointment-counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.yd-appointment-counts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 17px;
+  background: #f7faf8;
+  border: 1px solid var(--yd-border);
+  border-radius: 14px;
+}
+
+.yd-appointment-counts strong {
+  color: var(--yd-primary-dark);
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.yd-appointment-counts span {
+  color: var(--yd-muted);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* =====================================
+   EMPTY STATES
+===================================== */
+
+.yd-appointment-empty {
+  min-height: 165px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 25px;
+  color: var(--yd-primary);
+  background: #f8fbf9;
+  border: 1px dashed #d5e7dc;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.yd-appointment-empty h3 {
+  margin: 0;
+  color: var(--yd-text);
+  font-size: 15px;
+}
+
+.yd-appointment-empty p {
+  margin: 0;
+  color: var(--yd-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =====================================
+   APPOINTMENT LIST
+===================================== */
+
+.yd-appointment-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.yd-appointment-card {
+  min-width: 0;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--yd-border);
+  border-radius: 16px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.yd-appointment-card:hover {
+  transform: translateY(-2px);
+  border-color: #b9dfcb;
+  box-shadow: 0 10px 25px rgba(24, 53, 43, 0.06);
+}
+
+.yd-appointment-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.yd-appointment-label {
+  color: var(--yd-primary);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+
+.yd-appointment-card-top h3 {
+  margin: 5px 0;
+  color: var(--yd-text);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.yd-appointment-card-top small {
+  color: var(--yd-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   APPOINTMENT STATUS
+===================================== */
+
+.yd-appointment-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.5px;
+}
+
+.yd-appointment-status.pending {
+  color: #98600c;
+  background: #fff4d9;
+}
+
+.yd-appointment-status.confirmed {
+  color: #08724f;
+  background: #e3f7eb;
+}
+
+.yd-appointment-status.completed {
+  color: #245a9b;
+  background: #e8f1ff;
+}
+
+.yd-appointment-status.cancelled {
+  color: #ad3838;
+  background: #ffeded;
+}
+
+/* =====================================
+   APPOINTMENT DETAILS
+===================================== */
+
+.yd-appointment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px 17px;
+  margin-bottom: 15px;
+}
+
+.yd-appointment-details > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--yd-muted);
+  font-size: 11px;
+}
+
+.yd-appointment-details svg {
+  flex-shrink: 0;
+  color: var(--yd-primary);
+}
+
+.yd-appointment-details span {
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   APPOINTMENT REASON / NOTES
+===================================== */
+
+.yd-appointment-reason {
+  padding: 12px 13px;
+  margin-top: 12px;
+  background: #f7faf8;
+  border: 1px solid #e9f0eb;
+  border-radius: 11px;
+}
+
+.yd-appointment-reason strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--yd-text);
+  font-size: 11px;
+}
+
+.yd-appointment-reason p {
+  margin: 0;
+  color: var(--yd-muted);
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   APPOINTMENT ACTIONS
+===================================== */
+
+.yd-appointment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.yd-confirm-button,
+.yd-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 39px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.yd-confirm-button {
+  color: #fff;
+  background: var(--yd-primary);
+}
+
+.yd-confirm-button:hover:not(:disabled) {
+  background: var(--yd-primary-dark);
+}
+
+.yd-cancel-button {
+  color: #b43b3b;
+  background: #fff1f1;
+  border-color: #f2d4d4;
+}
+
+.yd-cancel-button:hover:not(:disabled) {
+  background: #ffe4e4;
+}
+
+.yd-confirm-button:disabled,
+.yd-cancel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   CONSULTATION CARDS
+===================================== */
+
+.yd-appointments-section .yd-appointment-card {
+  position: relative;
+}
+
+.yd-appointments-section .yd-appointment-card:has(.yd-confirm-button) {
+  border-color: #d4eadc;
+}
+
+.yd-appointments-section .yd-appointment-card .yd-confirm-button svg {
+  flex-shrink: 0;
+}
+
+/* =====================================
+   WEEKLY AVAILABILITY
+===================================== */
+
+.yd-availability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.yd-availability-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(115px, auto) minmax(230px, 1.5fr);
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  background: #fafcfb;
+  border: 1px solid var(--yd-border);
+  border-radius: 13px;
+}
+
+.yd-availability-row.available {
+  border-left: 3px solid var(--yd-accent);
+}
+
+.yd-availability-row.unavailable {
+  opacity: 0.72;
+  border-left: 3px solid #c8d1cb;
+}
+
+.yd-availability-day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.yd-availability-day strong {
+  color: var(--yd-text);
+  font-size: 12px;
+}
+
+.yd-availability-day span {
+  color: var(--yd-muted);
+  font-size: 10px;
+}
+
+.yd-availability-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--yd-muted);
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.yd-availability-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--yd-primary);
+  cursor: pointer;
+}
+
+.yd-availability-times {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.yd-availability-times label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.yd-availability-times label span {
+  color: var(--yd-muted);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.yd-availability-times input {
+  width: 100%;
+  min-width: 0;
+  height: 37px;
+  padding: 7px 9px;
+  color: var(--yd-text);
+  background: #fff;
+  border: 1px solid var(--yd-border);
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.yd-availability-times input:disabled {
+  color: #a8b4ac;
+  background: #f0f3f1;
+  cursor: not-allowed;
+}
+
+.yd-availability-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 11px 17px;
+  margin-top: 18px;
+  color: #fff;
+  background: var(--yd-primary);
+  border: 0;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.yd-availability-save:hover:not(:disabled) {
+  background: var(--yd-primary-dark);
+}
+
+.yd-availability-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   DOCTOR PROFILE FORM
+===================================== */
+
+.yd-doctor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.yd-form-section {
+  padding: 25px;
+  background: var(--yd-surface);
+  border: 1px solid var(--yd-border);
+  border-radius: 20px;
+  box-shadow: var(--yd-shadow);
+}
+
+.yd-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 23px;
+}
+
+.yd-section-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--yd-primary);
+  background: var(--yd-primary-light);
+  border-radius: 13px;
+}
+
+.yd-section-heading h2 {
+  margin: 0;
+  color: var(--yd-text);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.yd-section-heading p {
+  margin: 5px 0 0;
+  color: var(--yd-muted);
+  font-size: 11px;
+}
+
+/* =====================================
+   FORM GRID AND FIELDS
+===================================== */
+
+.yd-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.yd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.yd-field > span {
+  color: var(--yd-text);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.yd-field em {
+  color: var(--yd-danger);
+  font-style: normal;
+}
+
+.yd-field input,
+.yd-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  color: var(--yd-text);
+  background: #fbfdfb;
+  border: 1px solid var(--yd-border);
+  border-radius: 10px;
+  outline: none;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.yd-field input {
+  min-height: 43px;
+}
+
+.yd-field textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.yd-field input:focus,
+.yd-field textarea:focus {
+  background: #fff;
+  border-color: var(--yd-primary);
+  box-shadow: 0 0 0 3px rgba(8, 127, 91, 0.09);
+}
+
+.yd-field input::placeholder,
+.yd-field textarea::placeholder {
+  color: #a2b0a8;
+}
+
+.yd-field > small {
+  color: var(--yd-muted);
+  font-size: 10px;
+}
+
+.yd-field-wide {
+  grid-column: 1 / -1;
+}
+
+/* =====================================
+   CONSULTATION MODE
+===================================== */
+
+.yd-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 3px;
+}
+
+.yd-mode-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 78px;
+  padding: 14px;
+  color: var(--yd-muted);
+  background: #fafcfb;
+  border: 1px solid var(--yd-border);
+  border-radius: 13px;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.yd-mode-card > svg:first-child {
+  flex-shrink: 0;
+  color: var(--yd-primary);
+}
+
+.yd-mode-card > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.yd-mode-card strong {
+  color: var(--yd-text);
+  font-size: 12px;
+}
+
+.yd-mode-card small {
+  color: var(--yd-muted);
+  font-size: 10px;
+}
+
+.yd-mode-card > svg:last-child {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--yd-primary);
+}
+
+.yd-mode-card.selected {
+  background: #effaf4;
+  border-color: #91d3b0;
+  box-shadow: 0 0 0 2px rgba(8, 127, 91, 0.06);
+}
+
+.yd-mode-card:hover {
+  border-color: #9bd8b8;
+}
+
+/* =====================================
+   PROFILE PREVIEW
+===================================== */
+
+.yd-preview-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr);
+  gap: 17px;
+}
+
+.yd-preview-card,
+.yd-checklist-card {
+  min-width: 0;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--yd-border);
+  border-radius: 18px;
+  box-shadow: var(--yd-shadow);
+}
+
+.yd-preview-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.yd-preview-avatar {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0b9369, #14b87a);
+  border-radius: 17px;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+.yd-preview-name {
+  min-width: 0;
+}
+
+.yd-preview-name > span {
+  color: var(--yd-primary);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.2px;
+}
+
+.yd-preview-name h2 {
+  margin: 5px 0;
+  color: var(--yd-text);
+  font-size: 16px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.yd-preview-name p {
+  margin: 0;
+  color: var(--yd-muted);
+  font-size: 11px;
+}
+
+.yd-preview-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.yd-preview-details > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--yd-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.yd-preview-details svg {
+  flex-shrink: 0;
+  color: var(--yd-primary);
+}
+
+.yd-preview-details span {
+  overflow-wrap: anywhere;
+}
+
+.yd-preview-bio {
+  padding-top: 14px;
+  margin: 15px 0 0;
+  color: var(--yd-muted);
+  border-top: 1px solid var(--yd-border);
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   PROFILE CHECKLIST
+===================================== */
+
+.yd-checklist-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 19px;
+  color: var(--yd-primary);
+}
+
+.yd-checklist-heading h3 {
+  margin: 0;
+  color: var(--yd-text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.yd-check-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 0;
+  border-bottom: 1px solid #edf2ee;
+}
+
+.yd-check-row:last-child {
+  border-bottom: 0;
+}
+
+.yd-check-row > svg {
+  flex-shrink: 0;
+  color: #bdc9c0;
+}
+
+.yd-check-row > svg.completed {
+  color: var(--yd-primary);
+}
+
+.yd-check-row span {
+  flex: 1;
+  color: var(--yd-text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.yd-check-row small {
+  color: var(--yd-muted);
+  font-size: 10px;
+}
+
+/* =====================================
+   PROFILE SAVE BAR
+===================================== */
+
+.yd-save-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  background: #eaf7ef;
+  border: 1px solid #d0ead9;
+  border-radius: 17px;
+}
+
+.yd-save-bar > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.yd-save-bar strong {
+  color: var(--yd-text);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.yd-save-bar span {
+  color: var(--yd-muted);
+  font-size: 11px;
+}
+
+.yd-save-bar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 11px 17px;
+  color: #fff;
+  background: var(--yd-primary);
+  border: 0;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.yd-save-bar button:hover:not(:disabled) {
+  background: var(--yd-primary-dark);
+}
+
+.yd-save-bar button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.yd-doctor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 4px 5px;
+  color: var(--yd-muted);
+  font-size: 10px;
+}
+
+.yd-doctor-footer span:first-child {
+  color: var(--yd-primary);
+  font-weight: 850;
+  letter-spacing: 0.3px;
+}
+
+/* =====================================
+   VIDEO CONSULTATION OVERLAY
+===================================== */
+
+.yd-video-consultation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(12, 30, 20, 0.88);
+  backdrop-filter: blur(7px);
+}
+
+.yd-video-consultation-container {
+  width: min(1100px, 100%);
+  min-height: 90vh;
+  margin: 0 auto;
+  padding: 18px;
+  background: #f5f9f6;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.yd-video-consultation-container > .yd-refresh-button {
+  margin-bottom: 14px;
+}
+
+/* =====================================
+   ACCESSIBILITY / FOCUS
+===================================== */
+
+.yd-doctor-page button:focus-visible,
+.yd-doctor-page input:focus-visible,
+.yd-doctor-page textarea:focus-visible {
+  outline: 3px solid rgba(20, 184, 122, 0.3);
+  outline-offset: 2px;
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 1000px) {
+  .yd-doctor-page {
+    padding: 23px;
+  }
+
+  .yd-appointment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-availability-row {
+    grid-template-columns: minmax(100px, 1fr) minmax(110px, auto);
+  }
+
+  .yd-availability-times {
+    grid-column: 1 / -1;
+  }
+
+  .yd-preview-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 650px) {
+  .yd-doctor-page {
+    padding: 15px;
+  }
+
+  .yd-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .yd-page-heading h1 {
+    font-size: 27px;
+  }
+
+  .yd-account-chip {
+    padding: 9px 13px;
+  }
+
+  .yd-status-banner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .yd-status-copy {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .yd-status-label {
+    margin-left: 60px;
+  }
+
+  .yd-appointments-section,
+  .yd-availability-section,
+  .yd-form-section {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .yd-appointments-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yd-appointments-heading h2 {
+    font-size: 17px;
+  }
+
+  .yd-refresh-button {
+    align-self: flex-start;
+  }
+
+  .yd-appointment-counts {
+    gap: 8px;
+  }
+
+  .yd-appointment-counts > div {
+    padding: 12px;
+  }
+
+  .yd-appointment-counts strong {
+    font-size: 21px;
+  }
+
+  .yd-appointment-counts span {
+    font-size: 10px;
+  }
+
+  .yd-appointment-card {
+    padding: 15px;
+  }
+
+  .yd-availability-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .yd-availability-times {
+    grid-column: auto;
+  }
+
+  .yd-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .yd-field-wide {
+    grid-column: auto;
+  }
+
+  .yd-mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-preview-details {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-save-bar {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 17px;
+  }
+
+  .yd-save-bar button {
+    width: 100%;
+  }
+
+  .yd-doctor-footer {
+    font-size: 9px;
+  }
+
+  .yd-video-consultation-overlay {
+    padding: 8px;
+  }
+
+  .yd-video-consultation-container {
+    min-height: 95vh;
+    padding: 10px;
+    border-radius: 13px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+  .yd-doctor-page {
+    padding: 10px;
+  }
+
+  .yd-appointment-counts {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-appointment-card-top {
+    flex-direction: column;
+  }
+
+  .yd-appointment-actions {
+    flex-direction: column;
+  }
+
+  .yd-appointment-actions button {
+    width: 100%;
+  }
+
+  .yd-availability-times {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-preview-card,
+  .yd-checklist-card {
+    padding: 16px;
+  }
+}
